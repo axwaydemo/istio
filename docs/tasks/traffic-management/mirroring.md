@@ -1,6 +1,8 @@
+> 这个任务使用了新的API： [v1alpha3 traffic management API](/blog/2018/v1alpha3-routing/). 老版本的API已经被弃用了，并会在Istio的下一个发布版本中被移除掉。如果你需要使用旧版本的API，请参考这篇文档：[here](https://archive.istio.io/v0.7/docs/tasks/traffic-management/).
+
 # 流量镜像
 
-这一任务演示istio对流量进行镜像复制的能力。流量镜像是一个有力的工具，在业务团队对生产系统进行变更的过程中，这一能力能够有效的降低风险。流量镜像功能可以对实时流量进行复制，将这一副本发送给镜像服务，并把主服务的关键请求路径放到带外。
+这一任务演示istio的流量跟踪和流量镜像的功能。流量镜像是一个有力的工具，在业务团队对生产系统进行变更的过程中，这一能力能够有效的降低风险。流量镜像通过使用镜像服务对流量进行实时的复制，并且（该调用）会发生在用于主要服务的关键请求路径带中 。
 
 > Mirroring brings a copy of live traffic to a mirrored service and happens out of band of the critical request path for the primary service.
 > 上句翻译存疑，目前也找不到合适的测试方法进行验证。
